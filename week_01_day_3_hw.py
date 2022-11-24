@@ -81,13 +81,34 @@ specific_task(tasks, desc_input)
 
 
 
+# tasks = [
+#     { "description": "Wash Dishes", "completed": False, "time_taken": 10 },
+#     { "description": "Clean Windows", "completed": False, "time_taken": 15 },
+#     { "description": "Make Dinner", "completed": True, "time_taken": 30 },
+#     { "description": "Feed Cat", "completed": False, "time_taken": 5 },
+#     { "description": "Walk Dog", "completed": True, "time_taken": 60 },
+# ]
 
-# 6. Given a description update that task to mark it as complete.
+#6. Given a description update that task to mark it as complete.
 
+desc_input = input("Enter description (from, Wash Dises, Clean Windows, Make Dinner, Feed Cat, Walk Dog: ")
 
+def complete(list_of_tasks, description):
+    for task in list_of_tasks:
+        if task ["description"] == description:
+            update = list_of_tasks[list_of_tasks.index(task)]["completed"] = True
+            print(list_of_tasks)
 
-
-
+complete(tasks, desc_input)
 
 
 # 7. Add a task to the list
+
+input_desc = str(input("Description: "))
+input_time = int(input("Time taken: "))
+
+def new_task(list_of_tasks, desc, time):
+    list_of_tasks.append({"description": desc, "completed": False, "time_taken": time})
+    print(list_of_tasks)
+
+new_task(tasks, input_desc, input_time)
